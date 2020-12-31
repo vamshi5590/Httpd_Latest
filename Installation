@@ -1,0 +1,14 @@
+Install Latest Apache on Centos 
+
+yum install yum-changelog -y
+yum changelog httpd -y
+sudo yum install -y epel-release
+cd /etc/yum.repos.d && wget https://repo.codeit.guru/codeit.el`rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release)`.repo
+yum install wget -y
+cd /etc/yum.repos.d && wget https://repo.codeit.guru/codeit.el`rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release)`.repo
+yum info httpd
+yum install httpd -y
+
+
+sudo setenforce 0
+sudo sed -i 's/^SELINUX=.*/SELINUX=permissive/g' /etc/selinux/config
